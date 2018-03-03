@@ -68,6 +68,7 @@ m <- cor(df, method = 'spearman')
   as.data.frame() %>% 
   arrange(desc(Freq))
 
+ #~0,6
 
 ```
 
@@ -83,7 +84,7 @@ m <- cor(df, method = 'kendall')
   as.data.frame() %>% 
   arrange(desc(Freq))
 
-
+#~0,36
 
 ```
 
@@ -92,10 +93,6 @@ m <- cor(df, method = 'kendall')
 ```{r}
 # Use the function 'corrplot'  
 corrplot(m, type="upper", order="hclust")
-# or use a custom R function, named rquery.cormat(), for calculating and visualizing your correlation matrix
-# source("http://www.sthda.com/upload/rquery_cormat.r")
-# require("corrplot")
-# rquery.cormat(m)
 ```
 
 ### Visualise your data using `ggpairs`() (from the GGally package) 
@@ -118,15 +115,16 @@ Variables:
 Hypothesis: The mean proportion of separate expressions of manner and path will be higher for the more recent Cohorts than for the earlier ones.
 
 ```{r 2.0}
-data (NSL)
-View(NSL)
+#data (NSL)
+#View(NSL)
+df <- read.csv('C:\\Users\\student\\Desktop\\NSL.txt', sep = '\t')
 ```
 
 ### 2.1 Make a boxplot  
 
 ```{r 2.1}
 # boxplot
-
+boxplot(df)
 
 ```
 
