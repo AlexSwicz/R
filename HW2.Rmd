@@ -76,7 +76,7 @@ print(c('A correlation:', As_correlation, 'a correlation:', as_correlation, 'y c
 ###1.6 Use the linear regression model to predict f2 by f1.
 ###1.6.1 Provide the result regression formula
 ```{r 1.6.1}
-LinearMod <- lm(f2 ~ f1, shva)
+LinearMod <- lm(f1 ~ f2, shva)
 summary(LinearMod)
 ```
 ###1.6.2 Provide the adjusted R2
@@ -230,7 +230,7 @@ print('p-value is 0.0001553 < 0,05, so that is highly unlikely that they are ind
 
 ### 3.3 Provide expected values for Pearson's Chi-squared Test of `Aux` and `EPTrans` variables.
 ```{r 3.3}
-Expected <- chisq.test(d_caus$Aux, d_caus$Country)$expected
+Expected <- chisq.test(d_caus$Aux, d_caus$EPTrans)$expected
 print(Expected)
 ```
 
@@ -238,7 +238,7 @@ print(Expected)
 ```{r 3.4}
 forodds <- table(d_caus$Aux, d_caus$Country)
 fisher.test(forodds)
-print('Odds ratio: 2.607761')
+print('We can take odds ratio from Fisher test: 2.607761')
 ```
 
 ### 3.5 Calculate effect size for this test using Cramer's V (phi).
