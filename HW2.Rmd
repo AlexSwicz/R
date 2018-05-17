@@ -256,7 +256,7 @@ We have found a significant association between variables Aux and Country (p = 0
 ### 3.7 Visualize the distribution using mosaic plot.
 Use `mosaic()` function from `vcd` library.
 ```{r 3.7}
-mosaic(~ Aux + CrSem + Country, data=d_caus, shade=TRUE, legend=TRUE)
+mosaic(~ Aux + Country, data=d_caus, shade=TRUE, legend=TRUE)
 ```
 
 Below is an example of how to use mosaic() with three variables.
