@@ -48,7 +48,7 @@ We assume outliers to be those observations that lie outside 1.5 * IQR, where IQ
 ```{r 1.3}
 outliers <- subset(shva$f1, shva$vowel == 'a')
 threshold <- 1.5 * IQR(outliers)
-outliers_res <- subset(outliers, outliers < (quantile(outliers))[2] - threshold | outliers > (quantiles[4])  + threshold)
+outliers_res <- subset(outliers, outliers < quantile(outliers)[2] - threshold | outliers > quantile(outliers)[4] + threshold)
 outliers_res
 ### >679 can be cosidered outliers.
 ```
