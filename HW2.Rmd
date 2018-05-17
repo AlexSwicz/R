@@ -212,14 +212,15 @@ print('p-value is 0.06778, so the association is insignificant.')
 chisq.test(d_caus$Aux, d_caus$CdEvSem)
 print('p-value is 2.144e-05, so the association is significant.')
 chisq.test(d_caus$Aux, d_caus$CeSynt)
-print('p-value is 1.88e-15, so the association is significant.')
+print('It gives us an error. Now we use Fisher test.')
+fisher.test(d_caus$Aux, d_caus$CeSynt)
 chisq.test(d_caus$Aux, d_caus$EPTrans)
 print('p-value is 0.0001553, so the association is significant.')
 chisq.test(d_caus$Aux, d_caus$Country)
 print('p-value is 0.0001127, so the association is significant.')
 chisq.test(d_caus$Aux, d_caus$Domain)
 print('p-value is 2.014e-06, so the association is significant.')
-### It seems they all work pretty well.
+### We cannot use chi-squared with Aux and CeSynt, but p < 2.2e-16, so it is statistically significant.
 ```
 
 ### 3.2. Test the hypothesis that `Aux` and `EPTrans` are not independent with the help of Pearson's Chi-squared Test. 
