@@ -50,7 +50,6 @@ outliers <- subset(shva$f1, shva$vowel == 'a')
 threshold <- 1.5 * IQR(outliers)
 outliers_res <- subset(outliers, outliers < quantile(outliers)[2] - threshold | outliers > quantile(outliers)[4] + threshold)
 outliers_res
-### >679 can be cosidered outliers.
 ```
 
 ### 1.4 Calculate Pearson's correlation of `f1` and `f2` (all data)
